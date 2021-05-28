@@ -34,50 +34,63 @@ img_background.src = "img/background/9.png"
 img_background.onload = function() {
    ctx.drawImage(img_background, 0, 0, 300, 300);
    
-   img_bodie_color.src = "img/bodie_color/"+dna.toString()[0]+".png";
-   img_bodie_color.onload = function() {
-      ctx.drawImage(img_bodie_color, 0, 0, 300, 300);
-   }
-    img_shape.src = "img/shape/"+dna.toString()[1]+".png";
-   img_shape.onload = function() {
-      ctx.drawImage(img_shape, 0, 0, 300, 300);
-   }  
-      img_hat_color.src = "img/hat_color/"+dna.toString()[2]+".png";
-   img_hat_color.onload = function() {
-      ctx.drawImage(img_hat_color, 0, 0, 300, 300);
-   }
-      img_bush.src = "img/bush/"+dna.toString()[3]+".png";
-   img_bush.onload = function() {
-      ctx.drawImage(img_bush, 0, 0, 300, 300);
-   }
-      img_spots.src = "img/spots/"+dna.toString()[4]+".png";
-   img_spots.onload = function() {
-      ctx.drawImage(img_spots, 0, 0, 300, 300);
-   }
-      img_ellipse.src = "img/ellipse/"+dna.toString()[5]+".png";
-   img_ellipse.onload = function() {
-      ctx.drawImage(img_ellipse, 0, 0, 300, 300);
-   }
-     img_headband .src = "img/headband/"+dna.toString()[6]+".png";
-   img_headband.onload = function() {
-      ctx.drawImage(img_headband, 0, 0, 300, 300);
-   }
-         img_eyes.src = "img/eyes/"+dna.toString()[7]+".png";
-   img_eyes.onload = function() {
-      ctx.drawImage(img_eyes, 0, 0, 300, 300);
-   }
-         img_mouth.src = "img/mouth/"+dna.toString()[8]+".png";
-   img_mouth.onload = function() {
-      ctx.drawImage(img_mouth, 0, 0, 300, 300);
-   }
-      img_bush.src = "img/bush/"+dna.toString()[9]+".png";
-   img_bush.onload = function() {
-      ctx.drawImage(img_bush, 0, 0, 300, 300);
-   }
-   
-var img = c.toDataURL("mush_created");   
-document.write('<img src="' + img + '" width="300" height="300"/>');   
+   if (dna.toString()[0]==0){
+	   
+		img_bodie_color.src = "img/bodie_color/"+dna.toString()[1]+".png";
+		img_bodie_color.onload = function() {
+			ctx.drawImage(img_bodie_color, 0, 0, 300, 300);
+	   }
+		img_shape.src = "img/shape/0.png";
+		img_shape.onload = function() {
+			ctx.drawImage(img_shape, 0, 0, 300, 300);
+	   }  
+		img_hat_color.src = "img/hat_color/"+dna.toString()[2]+".png";
+		img_hat_color.onload = function() {
+			ctx.drawImage(img_hat_color, 0, 0, 300, 300);
+	   }
 
+		img_spots.src = "img/spots/"+dna.toString()[3]+".png";
+		img_spots.onload = function() {
+			ctx.drawImage(img_spots, 0, 0, 300, 300);
+	   }
+		img_ellipse.src = "img/ellipse/0.png";
+		img_ellipse.onload = function() {
+			ctx.drawImage(img_ellipse, 0, 0, 300, 300);
+	   }
+		img_headband .src = "img/headband/0.png";
+		img_headband.onload = function() {
+			ctx.drawImage(img_headband, 0, 0, 300, 300);
+	   }
+		img_eyes.src = "img/eyes/"+dna.toString()[4]+".png";
+		img_eyes.onload = function() {
+			ctx.drawImage(img_eyes, 0, 0, 300, 300);
+	   }
+		img_mouth.src = "img/mouth/"+dna.toString()[5]+".png";
+		img_mouth.onload = function() {
+		  ctx.drawImage(img_mouth, 0, 0, 300, 300);
+	   }
+		img_bush.src = "img/bush/"+dna.toString()[6]+".png";
+		img_bush.onload = function() {
+		  ctx.drawImage(img_bush, 0, 0, 300, 300);
+	   }
+	} 
+	
+	else {
+		img_bodie_color.src = "img/special/background_bush/"+dna.toString()[1]+".png"; <!-- body = background bush for rare ones -->
+		img_bodie_color.onload = function() {
+		  ctx.drawImage(img_bodie_color, 0, 0, 300, 300);
+	   } 
+	   	img_eyes.src = "img/special/naked/"+dna.toString()[4]+".png"; <!-- eyes = the mushroom itself for rare ones -->
+		img_eyes.onload = function() {
+			ctx.drawImage(img_eyes, 0, 0, 300, 300);
+	   }
+	   	img_bush.src = "img/special/bush/"+dna.toString()[6]+".png"; <!-- bushes 3,4,5 and 6 are specific for rare ones -->
+		img_bush.onload = function() {
+			ctx.drawImage(img_bush, 0, 0, 300, 300);
+	   }
+	}
+	var img = c.toDataURL("mush_created");   
+	document.write('<img src="' + img + '" width="300" height="300"/>');   
 };
 document.getElementById("demo").innerHTML = dna;
 }
